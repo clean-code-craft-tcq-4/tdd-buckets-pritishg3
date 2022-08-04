@@ -10,7 +10,8 @@ function resetCounterMap(counter, rangeList) {
 }
 
 function isInRange(sortedNum, i) {
-  const isInRange = sortedNum[i + 1] - sortedNum[i] === 1 ? true : false;
+  const isInRange = sortedNum[i + 1] - sortedNum[i] === 1 ? true :
+                    sortedNum[i + 1] - sortedNum[i] === 0 ? true : false;
   return isInRange;
 }
 
@@ -50,7 +51,7 @@ function savetocsv(rangeMap) {
   fs.writeFileSync('range-counter.csv', csv.join('\n'));
 }
 
-getRangeValue([2, 1, 10, 11, 12, 13, 3]);
+getRangeValue([2, 1, 10, 11, 12, 12, 13, 3]);
 
 module.exports = {
   sort,

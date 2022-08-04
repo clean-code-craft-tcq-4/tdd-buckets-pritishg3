@@ -61,6 +61,16 @@ describe('Test isInRange', () => {
     const sortedNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     expect(rangeCounter.isInRange(sortedNum, 0)).to.equal(true);
   });
+
+  it('It should return true in range for repeating values', () => {
+    const sortedNum = [1, 2, 3, 3, 5, 6, 7, 8, 9, 10];
+    expect(rangeCounter.isInRange(sortedNum, 2)).to.equal(true);
+  });
+
+  it('It should return false if the number is not in range', () => {
+    const sortedNum = [1, 2, 3, 7, 8, 9, 10];
+    expect(rangeCounter.isInRange(sortedNum, 2)).to.equal(false);
+  });
 });
 
 describe('Test getMinMaxRangeKey', () => {
