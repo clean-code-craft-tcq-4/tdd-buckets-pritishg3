@@ -5,7 +5,7 @@ const {expect} = require('chai');
 const spies = require('chai-spies');
 chai.use(spies);
 
-describe('Test the functionality to sort', () => {
+describe('Availability of required functions', () => {
   it('Sort should exist', () => {
     expect(rangeCounter.sort).to.exist;
   });
@@ -31,7 +31,7 @@ describe('Test the functionality to sort', () => {
   });
 });
 
-describe('Test the functionality of functions', () => {
+describe('Test the functionality of sort', () => {
   it('sort should return values in order', () => {
     expect(rangeCounter.sort([2, 3, 1])).to.deep.equal([1, 2, 3]);
   });
