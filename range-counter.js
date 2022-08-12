@@ -5,15 +5,14 @@ function sort(listOfNum) {
   return listOfNum.sort((a, b) => a - b);
 }
 
-function resetCounterMap(counter, rangeList) {
+function resetCounterMap(counter, rangeListdt) {
   counter = 1;
-  rangeList.length = 0;
+  rangeListdt.length = 0;
 }
 
 function isInRange(sortedNum, i) {
-  const isInRange = sortedNum[i + 1] - sortedNum[i] === 1 ? true :
+  return sortedNum[i + 1] - sortedNum[i] === 1 ? true :
                     sortedNum[i + 1] - sortedNum[i] === 0 ? true : false;
-  return isInRange;
 }
 
 function getMinMaxRangeKey(rangeList) {
@@ -23,16 +22,16 @@ function getMinMaxRangeKey(rangeList) {
 }
 
 
-function fillRangeCountMap(sortedNum, rangeList, rangeMap) {
+function fillRangeCountMap(sortedNum, rangeListData, rangeMapData) {
   let counter = 0;
   for (let i = 0; i < sortedNum.length; i++) {
     if (isInRange(sortedNum, i)) {
-      rangeList.push(sortedNum[i]);
+      rangeListData.push(sortedNum[i]);
     } else {
-      rangeList.push(sortedNum[i]);
-      counter = rangeList.length;
-      rangeMap[getMinMaxRangeKey(rangeList)] = counter;
-      resetCounterMap(counter, rangeList);
+      rangeListData.push(sortedNum[i]);
+      counter = rangeListData.length;
+      rangeMapData[getMinMaxRangeKey(rangeListData)] = counter;
+      resetCounterMap(counter, rangeListData);
     }
   }
 }
