@@ -1,4 +1,5 @@
 const rangeCounter = require('../range-counter');
+const sensorData = require('../twelvebit-sensor-data');
 const chai = require('chai');
 
 const {expect} = require('chai');
@@ -82,7 +83,7 @@ describe('Test getMinMaxRangeKey', () => {
 
 describe('Test printRangeValue', () => {
   it('It should print the range value in csv', () => {
-    const listOfNum = [1, 2, 3, 4, 7, 8, 9, 10];
+    const listOfNum = sensorData.getSequenceArray([4000, 4001, 4002]);
     rangeCounter.getRangeValue(listOfNum);
   });
 });

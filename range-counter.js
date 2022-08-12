@@ -1,4 +1,5 @@
 const fs = require('fs');
+const sensorData = require('./twelvebit-sensor-data');
 
 function sort(listOfNum) {
   return listOfNum.sort((a, b) => a - b);
@@ -51,7 +52,8 @@ function savetocsv(rangeMap) {
   fs.writeFileSync('range-counter.csv', csv.join('\n'));
 }
 
-getRangeValue([2, 1, 10, 11, 12, 12, 13, 3]);
+const sequenceData = sensorData.getSequenceArray([4000, 4001, 4002, 4095]);
+getRangeValue(sequenceData);
 
 module.exports = {
   sort,
