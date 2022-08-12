@@ -6,7 +6,6 @@ const {expect} = require('chai');
 const spies = require('chai-spies');
 chai.use(spies);
 
-
 const unsortedNum = [2, 3, 1];
 const sortedNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sortedNumWithRepeatVals = [1, 2, 3, 3, 5, 6, 7, 8, 9, 10];
